@@ -1,0 +1,55 @@
+{% extends 'main/base.html' %}
+
+{% load static %}
+{% block content %}
+    <main>
+        <!--? Hero Start -->
+        {% for slider in sliders %}
+        <div class="slider-area2" style="background-image:url({{ slider.image.url }}); background-repeat:no-repeat; background-size:cover;">
+            <div class="slider-height2 d-flex align-items-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="hero-cap hero-cap2 pt-70 text-center">
+                                <h2>About US</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        <!-- Hero End -->
+        <!--? About Area Start -->
+        <section class="about-area section-padding30 position-relative">
+            <div class="container">
+                <div class="row align-items-center">
+                    {% for setting in settings %}
+                    <div class="col-lg-6 col-md-11">
+                        <!-- about-img -->
+                        <div class="about-img ">
+                            <img src="{{ setting.image.url }}" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                        <div class="about-caption">
+                            <!-- Section Tittle -->
+                            
+                            <div class="section-tittle section-tittle3 mb-35">
+                                <span>About Our company</span>
+                                <h2>{{ setting.aboutheader }}</h2>
+                            </div>
+                            <p class="mb-30 pera-bottom">{{ setting.aboutus}}</p>
+                            
+                            <img src="{% static 'main/img/gallery/signature.png' %}" alt="">
+                            
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            
+
+
+    </main>
+    {% endblock %}
